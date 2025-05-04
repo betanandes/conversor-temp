@@ -1,20 +1,29 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>Conversor 🌡️</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding content-glass">
+  <div class="glass-container">
+    <ion-label position="stacked">
+      {{ convertToCelsius ? 'Digite em Fahrenheit' : 'Digite em Celsius' }}
+    </ion-label>
+    <ion-input
+      type="number"
+      [(ngModel)]="inputValue"
+      placeholder="Ex: 30"
+    ></ion-input>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-button expand="block" color="secondary" (click)="converter()">Converter</ion-button>
+
+    <ion-text *ngIf="result !== null">
+      Resultado: {{ result | number: '1.1-2' }}
+      °{{ convertToCelsius ? 'C' : 'F' }}
+    </ion-text>
+
+    <ion-button expand="block" color="light" fill="outline" (click)="toggleConversion()">
+      Alternar para °{{ convertToCelsius ? 'F' : 'C' }}
+    </ion-button>
   </div>
 </ion-content>
