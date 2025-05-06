@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-conversor',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
-  imports: [IonicModule, CommonModule, FormsModule],
+  imports: [IonicModule, CommonModule, FormsModule, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonLabel, IonInput],
 })
 export class HomePage {
   inputValue: number | null = null;
