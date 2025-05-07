@@ -1,15 +1,15 @@
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonLabel, IonInput } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonLabel, IonInput, IonButton, IonText} from '@ionic/angular/standalone';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
+// import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   standalone: true,
-  selector: 'app-conversor',
+  selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
-  imports: [IonicModule, CommonModule, FormsModule, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonLabel, IonInput],
+  imports: [CommonModule, FormsModule, IonHeader, IonToolbar, IonTitle, IonContent, IonLabel, IonInput, IonButton, IonText],
 })
 export class HomePage {
   inputValue: number | null = null;
